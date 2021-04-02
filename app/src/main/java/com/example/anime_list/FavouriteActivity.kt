@@ -19,7 +19,6 @@ class FavouriteActivity: AppCompatActivity() {
     private lateinit var adapter:FavouriteListAdapter
     private lateinit var recyclerView:RecyclerView
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var toolBar:Toolbar
 
     private fun initRecyclerview(){
         adapter= FavouriteListAdapter()
@@ -37,28 +36,6 @@ class FavouriteActivity: AppCompatActivity() {
         setContentView(R.layout.activity_favourites)
         initRecyclerview()
         loadItems()
-        toolBar=findViewById(R.id.toolbar)
-        setSupportActionBar(toolBar)
-        toolBar.inflateMenu(R.menu.menu_main)
-
-        val favouriteActionButton: AppCompatButton = findViewById(R.id.action_favourites)
-        favouriteActionButton.setOnClickListener{
-            val intent = Intent(this, FavouriteActivity::class.java)
-            startActivity(intent)
-        }
-
-        val animelistActionButton: AppCompatButton = findViewById(R.id.action_animelist)
-        animelistActionButton.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        val detailsActionButton: Button = findViewById(R.id.DetailsButton)
-        detailsActionButton.setOnClickListener{
-            val intent = Intent(this, DeatilsActivity::class.java)
-            startActivity(intent)
-        }
-
 
     }
 
@@ -67,13 +44,16 @@ class FavouriteActivity: AppCompatActivity() {
         return true
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_animelist -> true
+            R.id.action_animelist -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                true}
+            R.id.action_favourites ->{true}
             else -> super.onOptionsItemSelected(item)
         }
     }

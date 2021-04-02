@@ -7,10 +7,10 @@
         android:id="@+id/action_animelist"
         android:orderInCategory="100"
         android:title="@string/action_animelist"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_favourites"
         android:orderInCategory="200"
         android:title="@string/action_favourite"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 </menu>
