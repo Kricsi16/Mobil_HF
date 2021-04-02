@@ -13,5 +13,12 @@
     <string name="favourite">favourite</string>
     <string name="action_animelist">Anime list</string>
     <string name="action_favourite">Favourites</string>
+    <string name="title">Title</string>
+    <string name="original_title">Original_title:</string>
+    <string name="director">Director:</string>
+    <string name="producer">Producer:</string>
+    <string name="release_date">Release_date:</string>
+    <string name="score">Score:</string>
+    <string name="anime_description">Description:</string>
 
 </resources>
