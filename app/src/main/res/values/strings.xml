@@ -20,5 +20,6 @@
     <string name="release_date">Release_date:</string>
     <string name="score">Score:</string>
     <string name="anime_description">Description:</string>
+    <string name="view_favourites">Favourites</string>
 
 </resources>

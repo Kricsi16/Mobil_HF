@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Anime_list">
-        <activity android:name=".DeatilsActivity"></activity>
-        <activity android:name=".FavouriteActivity"></activity>
+        <activity android:name=".DeatilsActivity"  android:label="@string/details"></activity>
+        <activity android:name=".FavouriteActivity"  android:label="@string/view_favourites"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

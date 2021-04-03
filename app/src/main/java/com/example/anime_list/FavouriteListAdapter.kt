@@ -22,6 +22,13 @@ class FavouriteListAdapter : RecyclerView.Adapter<FavouriteListAdapter.Favourite
         init {
             detailsButton.setOnClickListener {
                 val intent = Intent(itemView.context, DeatilsActivity::class.java)
+                intent.putExtra("Title","ALMA")
+                intent.putExtra("Original_title","ALMA")
+                intent.putExtra("Producer","ALMA")
+                intent.putExtra("Director","ALMA")
+                intent.putExtra("Score","ALMA")
+                intent.putExtra("Description","ALMA")
+                intent.putExtra("Release_date","ALMA")
                 itemView.context.startActivity(intent)
             }
         }
