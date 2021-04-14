@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
     indices = [Index(value = ["title"], unique = true)])
 
 data class Anime (
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val title: String,
     val original_title: String,
     val original_title_romanised: String,
