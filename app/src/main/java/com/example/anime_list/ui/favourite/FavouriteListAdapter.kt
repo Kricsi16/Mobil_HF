@@ -1,4 +1,4 @@
-package com.example.anime_list
+package com.example.anime_list.ui.favourite
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import android.widget.Button
 
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.anime_list.R
+import com.example.anime_list.ui.details.DeatilsActivity
 
 
 class FavouriteListAdapter : RecyclerView.Adapter<FavouriteListAdapter.FavouriteItemHolder>() {
@@ -41,7 +43,9 @@ class FavouriteListAdapter : RecyclerView.Adapter<FavouriteListAdapter.Favourite
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouriteItemHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.favourite_items, parent, false)
-        return FavouriteItemHolder(itemView)
+        return FavouriteItemHolder(
+            itemView
+        )
 
     }
 

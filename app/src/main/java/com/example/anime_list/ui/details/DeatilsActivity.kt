@@ -1,4 +1,4 @@
-package com.example.anime_list
+package com.example.anime_list.ui.details
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
+import com.example.anime_list.R
+import com.example.anime_list.ui.favourite.FavouriteActivity
+import com.example.anime_list.ui.main.MainActivity
 
 class DeatilsActivity : AppCompatActivity() {
 

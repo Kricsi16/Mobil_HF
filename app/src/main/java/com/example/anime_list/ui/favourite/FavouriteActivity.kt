@@ -1,22 +1,18 @@
-package com.example.anime_list
+package com.example.anime_list.ui.favourite
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.anime_list.R
+import com.example.anime_list.ui.main.MainActivity
 
 class FavouriteActivity: AppCompatActivity() {
 
-    private lateinit var adapter:FavouriteListAdapter
+    private lateinit var adapter: FavouriteListAdapter
     private lateinit var recyclerView:RecyclerView
     private lateinit var linearLayoutManager: LinearLayoutManager
 
