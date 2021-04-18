@@ -12,9 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.anime_list.R
 import com.example.anime_list.model.AnimeDto
 import com.example.anime_list.ui.favourite.FavouriteActivity
+import javax.inject.Inject
 
 
 class MainActivity : AppCompatActivity(), MainScreen{
+
+    @Inject
+    lateinit var mainPresenter: MainPresenter
+
 
     private lateinit var adapter: AnimeListAdapter
     private lateinit var recyclerView: RecyclerView
@@ -33,6 +38,7 @@ class MainActivity : AppCompatActivity(), MainScreen{
         //swipeRefreshLayoutAnimes.isRefreshing = false
         adapter?.initList(animes)
 
+
     }
 
     override fun showNetworkError(errorMsg: String) {
@@ -41,7 +47,15 @@ class MainActivity : AppCompatActivity(), MainScreen{
     }
 
 
+    override fun onStart() {
+        super.onStart()
+        mainPresenter.attachScreen(this)
+    }
 
+    override fun onStop() {
+        super.onStop()
+        mainPresenter.detachScreen()
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,9 +67,7 @@ class MainActivity : AppCompatActivity(), MainScreen{
         setSupportActionBar(toolBar)
         toolBar.inflateMenu(R.menu.menu_main)
 
-
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)

@@ -1,5 +1,6 @@
 package com.example.anime_list.ui.details
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,10 +8,16 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import com.example.anime_list.R
+import com.example.anime_list.model.AnimeDto
 import com.example.anime_list.ui.favourite.FavouriteActivity
+import com.example.anime_list.ui.favourite.FavouritePresenter
 import com.example.anime_list.ui.main.MainActivity
+import javax.inject.Inject
 
 class DeatilsActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var detailsPresenter: DetailsPresenter
 
 
     lateinit var title_text: TextView
@@ -52,6 +59,12 @@ class DeatilsActivity : AppCompatActivity() {
     }
 
 
+
+
+     fun showDetails(details: List<AnimeDto>) {
+        //swipeRefreshLayoutAnimes.isRefreshing = false
+
+    }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true

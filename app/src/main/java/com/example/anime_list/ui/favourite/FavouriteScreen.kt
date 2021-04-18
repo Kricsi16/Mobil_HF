@@ -1,8 +1,9 @@
 package com.example.anime_list.ui.favourite
 
-import com.example.anime_list.model.Films
+import com.example.anime_list.model.AnimeDto
+
 
 interface FavouriteScreen {
-    fun showArtists(artists: List<Films>?)
+    fun showFavourites(animes: List<AnimeDto>)
     fun showNetworkError(errorMsg: String)
 }

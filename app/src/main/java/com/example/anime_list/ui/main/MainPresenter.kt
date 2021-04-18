@@ -14,6 +14,10 @@ import javax.inject.Inject
 
 class MainPresenter @Inject constructor(private val executor: Executor, private val animeDao:AnimeDao,private val filmsInteractor: FilmsInteractor) : Presenter<MainScreen>() {
 
+    fun showAnimes(animes:List<AnimeDto>) {
+        screen?.showAnimes(animes)
+    }
+
     override fun attachScreen(screen: MainScreen) {
         super.attachScreen(screen)
         EventBus.getDefault().register(this)

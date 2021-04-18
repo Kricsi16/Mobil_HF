@@ -9,12 +9,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.anime_list.R
+import com.example.anime_list.model.AnimeDto
 import com.example.anime_list.ui.details.DeatilsActivity
 
 
 class FavouriteListAdapter : RecyclerView.Adapter<FavouriteListAdapter.FavouriteItemHolder>() {
 
-    private val animeList: MutableList<String> = mutableListOf()
+    private val animeList: MutableList<AnimeDto> = mutableListOf()
 
     class FavouriteItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: TextView = itemView.findViewById(R.id.AnimeTitle)
@@ -36,7 +37,7 @@ class FavouriteListAdapter : RecyclerView.Adapter<FavouriteListAdapter.Favourite
         }
     }
 
-    fun initList(list: List<String>) {
+    fun initList(list: List<AnimeDto>){
         animeList.clear()
         animeList.addAll(list)
     }
@@ -56,7 +57,7 @@ class FavouriteListAdapter : RecyclerView.Adapter<FavouriteListAdapter.Favourite
 
     override fun onBindViewHolder(holder: FavouriteItemHolder, position: Int) {
         val item = animeList[position]
-        holder.title.text = item
+        holder.title.text = item.title
 
     }
 }

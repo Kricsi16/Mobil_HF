@@ -1,16 +1,24 @@
 package com.example.anime_list.ui.favourite
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.anime_list.R
+import com.example.anime_list.model.AnimeDto
 import com.example.anime_list.ui.main.MainActivity
+import javax.inject.Inject
 
 class FavouriteActivity: AppCompatActivity() {
+
+    @Inject
+    lateinit var favouritePresenter: FavouritePresenter
+
 
     private lateinit var adapter: FavouriteListAdapter
     private lateinit var recyclerView:RecyclerView
@@ -23,15 +31,24 @@ class FavouriteActivity: AppCompatActivity() {
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter
     }
-    fun loadItems(){
-        adapter.initList(listOf("ALMA","KÖRTE"))
+     fun showFavourites(animes: List<AnimeDto>) {
+        //swipeRefreshLayoutAnimes.isRefreshing = false
+        adapter?.initList(animes)
+
+    }
+
+
+
+     fun showNetworkError(errorMsg: String) {
+
+        Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favourites)
         initRecyclerview()
-        loadItems()
+
 
     }
 

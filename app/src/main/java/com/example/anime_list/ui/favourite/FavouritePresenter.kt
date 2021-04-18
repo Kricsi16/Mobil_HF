@@ -7,6 +7,9 @@ import javax.inject.Inject
 
 class FavouritePresenter @Inject constructor(private val executor: Executor) : Presenter<FavouriteScreen>() {
 
+    @Inject
+    lateinit var favouritePresenter: FavouritePresenter
+
     override fun attachScreen(screen: FavouriteScreen) {
         super.attachScreen(screen)
         EventBus.getDefault().register(this)
